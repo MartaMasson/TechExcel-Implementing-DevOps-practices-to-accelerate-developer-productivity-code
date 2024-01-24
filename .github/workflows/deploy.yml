@@ -1,16 +1,16 @@
 on:
-  workflow_dispatch
-
-env:
-  targetEnv: dev
-
-name: Azure Bicep
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    # Checkout code
-    - uses: actions/checkout@main
+    workflow_dispatch # teste
+  
+  env:
+    targetEnv: dev
+  
+  name: Azure Bicep
+  jobs:
+    build-and-deploy:
+      runs-on: ubuntu-latest
+      steps:
+      # Checkout code
+      - uses: actions/checkout@main
   
         # Log into Azure
     - uses: azure/login@v1
