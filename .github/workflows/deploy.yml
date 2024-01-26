@@ -8,6 +8,10 @@
   jobs:
     build-and-deploy:
       runs-on: ubuntu-latest
+      permissions:
+        id-token: write
+        contents: read
+        packages: write
       steps:
       # Checkout code
       - uses: actions/checkout@main
@@ -19,6 +23,7 @@
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           enable-AzPSSession: true
+          auth-type: SERVICE_PRINCIPAL
   
         # Deploy ARM template
       - name: Run ARM deploy
