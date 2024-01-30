@@ -119,7 +119,7 @@ jobs:
     needs: deploy-to-test
     environment:
       name: prod
-      url: https://7brkqlm6svzjw-prod.azurewebsites.net/
+      url:
     
     steps:
     - uses: actions/checkout@v3
